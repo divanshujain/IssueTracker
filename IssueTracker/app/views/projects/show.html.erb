@@ -6,4 +6,6 @@
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Back', projects_path %> |
+<%= link_to 'New Issue', new_project_issue_path(@project) %> |
+<%= link_to 'List Issues', project_issues_path(@project) %>
