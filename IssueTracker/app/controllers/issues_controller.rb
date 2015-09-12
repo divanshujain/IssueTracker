@@ -11,6 +11,7 @@ class IssuesController < ApplicationController
   # GET /issues/1.json
   def show
     @issue = @project.issues.find(params[:id])
+    @comment = Comment.new
   end
 
   # GET /issues/new
@@ -20,7 +21,7 @@ class IssuesController < ApplicationController
 
   # GET /issues/1/edit
   def edit
-    @issue = @project.issues.find(params[:id])  
+    @issue = @project.issues.find(params[:id])
   end
 
   # POST /issues

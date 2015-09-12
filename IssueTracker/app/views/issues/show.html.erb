@@ -17,3 +17,16 @@
 
 <%= link_to 'Edit', edit_project_issue_path(@project, @issue) %> |
 <%= link_to 'Back', project_issues_path(@project) %>
+
+<h2>Comments</h2>
+ <div id="comments">
+         <%= render :partial => @issue.comments %>
+ </div>
+
+<%= form_for @comment, url: project_issue_comments_path(@project, @issue), html: { method: :post } do |f| %>
+        <p>
+                <%= f.label :body, "New comment" %><br/>
+                <%= f.text_area :body %>
+        </p>
+        <p><%= f.submit "Add comment" %></p>
+<% end %>
